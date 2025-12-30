@@ -1,7 +1,5 @@
 #pragma once
 
-#include <defs.hpp>
-
 // ty HJFod
 
 enum class Corner {
@@ -14,7 +12,7 @@ enum class Corner {
 };
 
 template <class... Args>
-class SWITCHER_DLL PopupWithCorners : public geode::Popup<Args...> {
+class PopupWithCorners : public geode::Popup<Args...> {
 private:
     static const char* getCorner(Corner corner) {
         switch (corner) {

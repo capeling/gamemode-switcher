@@ -1,5 +1,5 @@
 {
-	"geode": "4.2.0",
+	"geode": "4.10.0",
 	"gd": {
 		"win": "2.2074",
 		"android": "2.2074",
@@ -9,11 +9,12 @@
 	"id": "capeling.gamemode-switcher",
 	"name": "Gamemode Swapper",
 	"links": {
-		"source": "https://github.com/Capeling/gamemode-switcher"
+		"source": "https://github.com/capeling/gamemode-switcher",
+		"homepage": "https://twitter.com/capelingg"
 	},
-	"version": "v1.0.8",
+	"version": "v1.0.9",
 	"developer": "Capeling",
-	"description": "Allows you to edit your player aspects!",
+	"description": "Geometry Dash player editor.",
 	"dependencies": {
 		"geode.node-ids": {
 			"version": ">=1.18.0",
