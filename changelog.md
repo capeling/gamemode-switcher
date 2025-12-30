@@ -1,6 +1,7 @@
 # Changelog
 ## v1.0.9
-- Internal rewrites in preperation for 2.208
+- Internal changes in preperation for 2.208
+- Add iOS support
 ## v1.0.8
 - Added mac support
 ## v1.0.7
