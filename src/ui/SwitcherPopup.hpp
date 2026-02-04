@@ -6,10 +6,10 @@
 
 namespace switcher {
 
-class SwitcherPopup : public PopupWithCorners<> {\
+class SwitcherPopup : public PopupWithCorners {
 public:
     static SwitcherPopup* create();
-    bool setup() override;
+    bool init() override;
     
     void updateGamemodeButtons();
     void updateSpeedButtons();

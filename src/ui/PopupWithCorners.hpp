@@ -11,8 +11,7 @@ enum class Corner {
     Brown,
 };
 
-template <class... Args>
-class PopupWithCorners : public geode::Popup<Args...> {
+class PopupWithCorners : public geode::Popup {
 private:
     static const char* getCorner(Corner corner) {
         switch (corner) {

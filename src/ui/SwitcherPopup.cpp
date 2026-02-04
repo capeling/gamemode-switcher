@@ -8,15 +8,17 @@ namespace switcher {
 
 SwitcherPopup* SwitcherPopup::create() {
     SwitcherPopup* ret = new SwitcherPopup();
-    if(ret->initAnchored(400, 240, "geode.loader/GE_square02.png")) {
+    if(ret->init()) {
         ret->autorelease();
         return ret;
     }
     delete ret;
     return nullptr;
 }
+bool SwitcherPopup::init() {
+    if (!Popup::init(400, 240, "geode.loader/GE_square02.png"))
+        return false;
 
-bool SwitcherPopup::setup() {
     setTitle("Edit Player", "bigFont.fnt");
     addCorners(Corner::Blue, Corner::Blue);
 
