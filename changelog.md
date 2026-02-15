@@ -1,4 +1,6 @@
 # Changelog
+## v1.0.10
+- Support for 2.2081
 ## v1.0.9
 - Internal changes in preperation for 2.208
 - Add iOS support
