@@ -1,4 +1,5 @@
-# Changelog
+## v1.1.0
+- Support for 2.2091
 ## v1.0.10
 - Support for 2.2081
 ## v1.0.9

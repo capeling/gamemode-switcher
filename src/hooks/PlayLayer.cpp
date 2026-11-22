@@ -41,6 +41,8 @@ void HookPlayLayer::performActionsOnPlayer(std::span<Action> actions) {
 }
 
 void HookPlayLayer::performActionOnPlayer(Action action) {
+    auto fields = m_fields.self();
+
     switch(action) {
         using enum Action;
         // 0-7 gamemode actions
@@ -107,7 +109,7 @@ void HookPlayLayer::performActionOnPlayer(Action action) {
         //13-17 misc
         case PlatformerToggle: {
             m_player1->m_isPlatformer = !m_player1->m_isPlatformer;
-#ifdef GEODE_IS_ANDROID
+#ifdef GEODE_IS_MOBILE
             m_uiLayer->togglePlatformerMode(m_player1->m_isPlatformer);
 #endif
             break;
@@ -134,9 +136,13 @@ void HookPlayLayer::performActionOnPlayer(Action action) {
     }
 
     if(static_cast<int>(action) <= 7 && action != Action::None) {
-        auto obj = TeleportPortalObject::create("edit_eGameRotBtn_001.png", true);
-        obj->m_cameraIsFreeMode = true;
-        this->playerWillSwitchMode(m_player1, obj);
+        if (!fields->m_object) {
+            auto obj = TeleportPortalObject::create("edit_eGameRotBtn_001.png", true);
+            obj->retain();
+            obj->m_cameraIsFreeMode = true;
+            fields->m_object = obj;
+        }
+        this->playerWillSwitchMode(m_player1, fields->m_object);
     }
 }
 

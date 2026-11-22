@@ -9,7 +9,7 @@ namespace switcher {
         void customSetup() {
             PauseLayer::customSetup();
 
-            auto rightMenu = typeinfo_cast<CCMenu*>(this->getChildByID("right-button-menu"));
+            auto rightMenu = typeinfo_cast<CCMenu*>(m_mainLayer->getChildByID("right-button-menu"));
             if(!rightMenu) {
                 log::error("right-button-menu not found!");
                 return;
